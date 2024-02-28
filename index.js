@@ -4,7 +4,7 @@ const fs = require("fs");
 const app = express();
 const port = 3000;
 
-const accessLogStream = fs.createWriteStream("access.log", { flags: "a" });
+const accessLogStream = fs.createWriteStream("server.log", { flags: "a" });
 
 app.use((req, res, next) => {
   const startTime = new Date();
@@ -26,7 +26,7 @@ app.get("/", (req, res) => {
 
 app.get("/users/:id", (req, res) => {
   const userId = req.params.id;
-  res.json({ id: userId, name: "John Doe", email: "john@example.com" });
+  res.json({ id: 1, name: "Nikhitha", email: "nikhitha@gmail.com" });
 });
 
 app.get("/products", (req, res) => {
@@ -42,3 +42,5 @@ app.get("/products", (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
+
+
